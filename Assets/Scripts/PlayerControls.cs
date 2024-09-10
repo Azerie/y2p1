@@ -33,6 +33,8 @@ public class PlayerControls : MonoBehaviour
     [Tooltip("What layers the character uses as ground")]
     [SerializeField] private LayerMask GroundLayers;
 
+    [Space(10)]
+    [Header("Debug values")]
     [SerializeField] private float _speed;
 	[SerializeField] private float _rotationVelocity;
 	[SerializeField] private float _verticalVelocity;
@@ -120,6 +122,7 @@ public class PlayerControls : MonoBehaviour
 
         // if there is no input, set the target speed to 0
         if (moveInput == Vector2.zero) targetSpeed = 0.0f;
+            
 
         // a reference to the players current horizontal velocity
         float currentHorizontalSpeed = new Vector3(_rb.velocity.x, 0.0f, _rb.velocity.z).magnitude;
@@ -154,7 +157,7 @@ public class PlayerControls : MonoBehaviour
         }
 
         // move the player
-        _rb.AddForce(inputDirection.normalized * (_speed * Time.deltaTime) + new Vector3(0.0f, _verticalVelocity, 0.0f) * Time.deltaTime, ForceMode.Impulse);
+        _rb.velocity = inputDirection.normalized * (_speed * Time.deltaTime) + new Vector3(0.0f, _verticalVelocity, 0.0f) * Time.deltaTime;
     }
 
     private void OnLook(InputValue value) 

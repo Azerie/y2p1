@@ -233,7 +233,7 @@ GameObject:
   - component: {fileID: 530915516}
   - component: {fileID: 530915515}
   - component: {fileID: 530915514}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -607,10 +607,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab18f5367b1d70caa9a1f2c26a510d3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveSpeed: 4
-  SprintSpeed: 6
-  RotationSpeed: 1
-  SpeedChangeRate: 10
+  MoveSpeed: 100
+  SprintSpeed: 130
+  RotationSpeed: 0.8
+  SpeedChangeRate: 1
+  JumpHeight: 1.2
+  Gravity: -15
+  JumpTimeout: 0.1
+  GroundedOffset: -0.14
+  GroundedRadius: 0.5
+  GroundLayers:
+    serializedVersion: 2
+    m_Bits: 64
+  _speed: 0
+  _rotationVelocity: 0
+  _verticalVelocity: 0
+  _terminalVelocity: 53
+  _isSprinting: 0
+  _jumpTimeoutDelta: 0
+  moveInput: {x: 0, y: 0}
+  lookInput: {x: 0, y: 0}
 --- !u!54 &1889565403
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -622,7 +638,7 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 80
