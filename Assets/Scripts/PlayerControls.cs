@@ -38,7 +38,7 @@ public class PlayerControls : MonoBehaviour
     [Header("Camera")]
     [Tooltip("Lower camera constraint")]
     [SerializeField] private int MinCameraAngle = -50;
-    [Tooltip("Lower camera constraint")]
+    [Tooltip("Higher camera constraint")]
     [SerializeField] private int MaxCameraAngle = 50;
 
     [Space(10)]
@@ -55,7 +55,7 @@ public class PlayerControls : MonoBehaviour
     [SerializeField] private Vector2 lookInput = Vector2.zero;
 
     private Rigidbody _rb;
-    private PlayerAnimalInteraction animalHandler;
+    private PlayerAnimalInteraction _animalHandler;
 
     void Start()
     {
@@ -64,7 +64,7 @@ public class PlayerControls : MonoBehaviour
 
     private void Awake()
     {
-        animalHandler = GetComponent<PlayerAnimalInteraction>();
+        _animalHandler = GetComponent<PlayerAnimalInteraction>();
     }
 
     void Update()
@@ -169,7 +169,7 @@ public class PlayerControls : MonoBehaviour
 
     private void OnInteract()
     {
-        animalHandler.Interact();   
+        _animalHandler.Interact();   
     }
 
     private void OnLook(InputValue value) 
