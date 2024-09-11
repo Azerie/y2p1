@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -34,6 +35,13 @@ public class PlayerControls : MonoBehaviour
     [SerializeField] private LayerMask GroundLayers;
 
     [Space(10)]
+    [Header("Camera")]
+    [Tooltip("Lower camera constraint")]
+    [SerializeField] private int MinCameraAngle = -50;
+    [Tooltip("Lower camera constraint")]
+    [SerializeField] private int MaxCameraAngle = 50;
+
+    [Space(10)]
     [Header("Debug values")]
     [SerializeField] private float _speed;
 	[SerializeField] private float _rotationVelocity;
@@ -41,18 +49,24 @@ public class PlayerControls : MonoBehaviour
 	[SerializeField] private float _terminalVelocity = 53.0f;
     [SerializeField] private bool _isSprinting;
     [SerializeField] private float _jumpTimeoutDelta = 0f;
+    [SerializeField] private float _cameraYrotation = 0f;
 
     [SerializeField] private Vector2 moveInput = Vector2.zero;
     [SerializeField] private Vector2 lookInput = Vector2.zero;
 
     private Rigidbody _rb;
-    // Start is called before the first frame update
+    private PlayerAnimalInteraction animalHandler;
+
     void Start()
     {
         _rb = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
+    private void Awake()
+    {
+        animalHandler = GetComponent<PlayerAnimalInteraction>();
+    }
+
     void Update()
     {
         GroundedCheck();
@@ -60,24 +74,6 @@ public class PlayerControls : MonoBehaviour
         Move();
     }
 
-    private void OnSprint(InputValue value) 
-    {
-        _isSprinting = value.isPressed;
-    }
-
-    private void OnMove(InputValue value) 
-    {
-        moveInput = value.Get<Vector2>();
-    }
-
-    private void OnJump(InputValue value) 
-    {
-        if (Grounded && value.isPressed && _jumpTimeoutDelta <= 0.0f) 
-        {
-            // the square root of H * -2 * G = how much velocity needed to reach desired height
-            _verticalVelocity = Mathf.Sqrt(JumpHeight * -2f * Gravity);
-        }
-    }
 
     private void GroundedCheck()
     {
@@ -133,12 +129,8 @@ public class PlayerControls : MonoBehaviour
         // accelerate or decelerate to target speed
         if (currentHorizontalSpeed < targetSpeed - speedOffset || currentHorizontalSpeed > targetSpeed + speedOffset)
         {
-            // creates curved result rather than a linear one giving a more organic speed change
-            // note T in Lerp is clamped, so we don't need to clamp our speed
             _speed = Mathf.Lerp(currentHorizontalSpeed, targetSpeed * inputMagnitude, Time.deltaTime * SpeedChangeRate);
-
-            // round speed to 3 decimal places
-            _speed = Mathf.Round(_speed * 1000f) / 1000f;
+            _speed = Mathf.Round(_speed * 100000f) / 100000f;
         }
         else
         {
@@ -148,16 +140,36 @@ public class PlayerControls : MonoBehaviour
         // normalise input direction
         Vector3 inputDirection = new Vector3(moveInput.x, 0.0f, moveInput.y).normalized;
 
-        // note: Vector2's != operator uses approximation so is not floating point error prone, and is cheaper than magnitude
-        // if there is a move input rotate player when the player is moving
         if (moveInput != Vector2.zero)
         {
-            // move
             inputDirection = transform.right * moveInput.x + transform.forward * moveInput.y;
         }
 
         // move the player
-        _rb.velocity = inputDirection.normalized * (_speed * Time.deltaTime) + new Vector3(0.0f, _verticalVelocity, 0.0f) * Time.deltaTime;
+        _rb.velocity = inputDirection.normalized * _speed + new Vector3(0.0f, _verticalVelocity, 0.0f);
+    }
+
+    private void OnMove(InputValue value)
+    {
+        moveInput = value.Get<Vector2>();
+    }
+    private void OnSprint()
+    {
+        _isSprinting = !_isSprinting;
+    }
+
+    private void OnJump()
+    {
+        if (Grounded && _jumpTimeoutDelta <= 0.0f)
+        {
+            // the square root of H * -2 * G = how much velocity needed to reach desired height
+            _verticalVelocity = Mathf.Sqrt(JumpHeight * -2f * Gravity);
+        }
+    }
+
+    private void OnInteract()
+    {
+        animalHandler.Interact();   
     }
 
     private void OnLook(InputValue value) 
@@ -166,5 +178,13 @@ public class PlayerControls : MonoBehaviour
 
         // rotate the player left and right
         transform.Rotate(Vector3.up * _rotationVelocity);
+
+        Camera cam = GetComponentInChildren<Camera>();
+        _cameraYrotation -= value.Get<Vector2>().y * RotationSpeed;
+        _cameraYrotation = Math.Clamp(_cameraYrotation, MinCameraAngle, MaxCameraAngle);
+
+        Quaternion newRotation = Quaternion.Euler(_cameraYrotation, 0, 0);
+
+        cam.transform.localRotation = newRotation;
     }
 }
