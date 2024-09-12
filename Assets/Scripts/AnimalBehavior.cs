@@ -11,6 +11,13 @@ public class AnimalBehavior : MonoBehaviour
     [Tooltip("Highest interval in milliseconds")]
     [SerializeField] private int MaxTimer;
 
+    [Space(10)]
+    [Header("Picking up")]
+    [Tooltip("Distance at which player holds the animal")]
+    [SerializeField] private float _animalHoldingDistance = 1;
+    [Tooltip("Height at which player holds the animal")]
+    [SerializeField] private float _animalHoldingHeight = 0;
+
     private AudioSource _voicePlayer;
     private int _timeUntilNextSound;
     void Start()
@@ -28,5 +35,13 @@ public class AnimalBehavior : MonoBehaviour
             _voicePlayer.Play();
             _timeUntilNextSound = Random.Range(MinTimer, MaxTimer);
         }
+    }
+
+    public float GetHoldingDistance() {
+        return _animalHoldingDistance;
+    }
+
+    public float GetHoldingHeight() {
+        return _animalHoldingHeight;
     }
 }

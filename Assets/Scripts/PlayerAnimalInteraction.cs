@@ -8,8 +8,8 @@ public class PlayerAnimalInteraction : MonoBehaviour
     private GameObject car;
     private bool _isHoldingAnimal = false;
     private bool _canDropoff = false;
-    [SerializeField] private float _animalHoldingDistance;
-    [SerializeField] private float _animalInCarPlacingHeight;
+    // [SerializeField] private float _animalHoldingDistance;
+    // [SerializeField] private float _animalInCarPlacingHeight;
 
     private void Awake()
     {
@@ -32,16 +32,22 @@ public class PlayerAnimalInteraction : MonoBehaviour
             else
             {
                 pickupableAnimal.transform.parent = transform.parent;
-                pickupableAnimal.GetComponent<Collider>().isTrigger = false;
-
+                // Debug.DrawRay(pickupableAnimal.transform.position, Vector3.down, Color.blue);
+                
+                if(Physics.Raycast(pickupableAnimal.transform.position, Vector3.down, out RaycastHit hit)) {
+                    Vector3 newPos = pickupableAnimal.transform.position + Vector3.down * hit.distance;
+                    pickupableAnimal.transform.position = newPos;
+                }
+                pickupableAnimal.GetComponent<Collider>().enabled = true;
                 _isHoldingAnimal = false;
             }
         }
         else if(pickupableAnimal != null) 
         {
+            AnimalBehavior animalInfo = pickupableAnimal.GetComponent<AnimalBehavior>();
             pickupableAnimal.transform.parent = transform;
-            pickupableAnimal.transform.localPosition = Vector3.forward * _animalHoldingDistance;
-            pickupableAnimal.GetComponent<Collider>().isTrigger = true;
+            pickupableAnimal.transform.localPosition = Vector3.forward * animalInfo.GetHoldingDistance() + Vector3.up * animalInfo.GetHoldingHeight();
+            pickupableAnimal.GetComponent<Collider>().enabled = false;
 
             _isHoldingAnimal = true;
         }

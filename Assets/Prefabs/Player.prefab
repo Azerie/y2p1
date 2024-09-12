@@ -9,12 +9,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6294082645431987337}
-  - component: {fileID: 6294082645431987341}
   - component: {fileID: 6294082645431987339}
+  - component: {fileID: 6294082645431987341}
   - component: {fileID: 6294082645431987340}
   - component: {fileID: 6294082645431987338}
   - component: {fileID: 6294082645431987336}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -38,20 +38,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6294082645431987341
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6294082645431987334}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a03642594d84044f84ac884eaea0460, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _animalHoldingDistance: 0.5
-  _animalInCarPlacingHeight: 0
 --- !u!114 &6294082645431987339
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -87,6 +73,18 @@ MonoBehaviour:
   _cameraYrotation: 0
   moveInput: {x: 0, y: 0}
   lookInput: {x: 0, y: 0}
+--- !u!114 &6294082645431987341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6294082645431987334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a03642594d84044f84ac884eaea0460, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!135 &6294082645431987340
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -157,7 +155,7 @@ GameObject:
   - component: {fileID: 6294082646341712677}
   - component: {fileID: 6294082646341712674}
   - component: {fileID: 6294082646341712675}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -239,7 +237,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6294082646716662749}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: PlayerCameraRoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -274,7 +272,7 @@ GameObject:
   - component: {fileID: 6294082647206731298}
   - component: {fileID: 6294082647206731299}
   - component: {fileID: 6294082647206731296}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}

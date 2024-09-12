@@ -50,6 +50,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MinTimer: 3000
   MaxTimer: 4000
+  _animalHoldingDistance: 2
+  _animalHoldingHeight: 2
 --- !u!135 &6894914136232468670
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -61,7 +63,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.7
+  m_Radius: 0.5
   m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!82 &6894914136232468667
 AudioSource:
