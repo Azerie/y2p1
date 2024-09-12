@@ -174,17 +174,25 @@ public class PlayerControls : MonoBehaviour
 
     private void OnLook(InputValue value) 
     {
-        _rotationVelocity = value.Get<Vector2>().x * RotationSpeed;
+        if(Time.timeScale == 1) {
+            _rotationVelocity = value.Get<Vector2>().x * RotationSpeed;
 
-        // rotate the player left and right
-        transform.Rotate(Vector3.up * _rotationVelocity);
+            // rotate the player left and right
+            transform.Rotate(Vector3.up * _rotationVelocity);
 
-        Camera cam = GetComponentInChildren<Camera>();
-        _cameraYrotation -= value.Get<Vector2>().y * RotationSpeed;
-        _cameraYrotation = Math.Clamp(_cameraYrotation, MinCameraAngle, MaxCameraAngle);
+            Camera cam = GetComponentInChildren<Camera>();
+            _cameraYrotation -= value.Get<Vector2>().y * RotationSpeed;
+            _cameraYrotation = Math.Clamp(_cameraYrotation, MinCameraAngle, MaxCameraAngle);
 
-        Quaternion newRotation = Quaternion.Euler(_cameraYrotation, 0, 0);
+            Quaternion newRotation = Quaternion.Euler(_cameraYrotation, 0, 0);
 
-        cam.transform.localRotation = newRotation;
+            cam.transform.localRotation = newRotation;
+        }
+    }
+
+    private void OnPause() {
+        Time.timeScale = 0;
+        GameObject pauseMenu = GameObject.FindGameObjectWithTag("PauseMenu");
+        pauseMenu.transform.GetComponent<Canvas>().enabled = true;
     }
 }
