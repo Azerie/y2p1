@@ -24,7 +24,10 @@ public class PlayerAnimalInteraction : MonoBehaviour
             if(_canDropoff)
             {
                 pickupableAnimal.transform.parent = car.transform;
-                pickupableAnimal.transform.localPosition = Vector3.up * car.transform.childCount;
+                CarBehavior carScript = car.GetComponent<CarBehavior>();
+                carScript.CheckAnimalsNumber();
+                // change localposition to position to be able to find values in editor
+                pickupableAnimal.transform.localPosition = pickupableAnimal.GetComponent<AnimalBehavior>().GetPlacementInCar();
                 pickupableAnimal = null;
                 _isHoldingAnimal = false;
             }

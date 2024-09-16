@@ -18,6 +18,10 @@ public class AnimalBehavior : MonoBehaviour
     [Tooltip("Height at which player holds the animal")]
     [SerializeField] private float _animalHoldingHeight = 0;
 
+    [Space(10)]
+    [Tooltip("Place of the animal relative to the car after placement")]
+    [SerializeField] private Vector3 _placementInCar = Vector3.up;
+
     private AudioSource _voicePlayer;
     private int _timeUntilNextSound;
     void Start()
@@ -43,5 +47,9 @@ public class AnimalBehavior : MonoBehaviour
 
     public float GetHoldingHeight() {
         return _animalHoldingHeight;
+    }
+
+    public Vector3 GetPlacementInCar() {
+        return _placementInCar;
     }
 }
