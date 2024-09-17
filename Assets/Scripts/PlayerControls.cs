@@ -193,4 +193,9 @@ public class PlayerControls : MonoBehaviour
         GameObject pauseMenu = GameObject.FindGameObjectWithTag("PauseMenu");
         pauseMenu.transform.GetComponent<Canvas>().enabled = true;
     }
+
+    public void SetCameraSensitivity(int sensitivity)
+    {
+        RotationSpeed = sensitivity;
+    }
 }

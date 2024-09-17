@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEditor.SearchService;
 using UnityEngine;
@@ -19,6 +20,25 @@ public class PauseMenu : MonoBehaviour
     {
         Time.timeScale = 1;
         SceneManager.LoadScene("SampleScene");
+    }
+
+    public void Options()
+    {
+        transform.GetChild(1).GetComponent<Canvas>().enabled = true;
+        transform.GetChild(0).GetComponent<Canvas>().enabled = false;
+    }
+
+    public void OptionsBack()
+    {
+        transform.GetChild(0).GetComponent<Canvas>().enabled = true;
+        transform.GetChild(1).GetComponent<Canvas>().enabled = false;
+    }
+
+    public void SensChange()
+    {
+        float value = transform.GetChild(1).GetComponentInChildren<Slider>().value;
+        Debug.Log(value);
+        FindObjectOfType<PlayerControls>().SetCameraSensitivity((int)Mathf.Round(value * 100));
     }
 
     public void Quit()

@@ -30,6 +30,7 @@ public class PlayerAnimalInteraction : MonoBehaviour
                 pickupableAnimal.transform.localPosition = pickupableAnimal.GetComponent<AnimalBehavior>().GetPlacementInCar();
                 pickupableAnimal = null;
                 _isHoldingAnimal = false;
+                _canDropoff = false;
             }
             // drop animal on the ground
             else
