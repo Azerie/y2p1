@@ -51,6 +51,7 @@ public class PlayerAnimalInteraction : MonoBehaviour
             AnimalBehavior animalInfo = pickupableAnimal.GetComponent<AnimalBehavior>();
             pickupableAnimal.transform.parent = transform;
             pickupableAnimal.transform.localPosition = Vector3.forward * animalInfo.GetHoldingDistance() + Vector3.up * animalInfo.GetHoldingHeight();
+            pickupableAnimal.transform.rotation = Quaternion.Euler(Vector3.zero);
             pickupableAnimal.GetComponent<Collider>().enabled = false;
 
             _isHoldingAnimal = true;

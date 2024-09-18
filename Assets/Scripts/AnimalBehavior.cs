@@ -10,6 +10,8 @@ public class AnimalBehavior : MonoBehaviour
     [SerializeField] private int MinTimer;
     [Tooltip("Highest interval in milliseconds")]
     [SerializeField] private int MaxTimer;
+    [Tooltip("Array of sound clips the animal makes")]
+    [SerializeField] private AudioClip[] _soundArray;
 
     [Space(10)]
     [Header("Picking up")]
@@ -36,9 +38,15 @@ public class AnimalBehavior : MonoBehaviour
         _timeUntilNextSound -= Mathf.RoundToInt(Time.deltaTime * 1000);
         if(_timeUntilNextSound <= 0) 
         {
-            _voicePlayer.Play();
+            // PlayVoiceline();
+            // uncomment after adding sounds
             _timeUntilNextSound = Random.Range(MinTimer, MaxTimer);
         }
+    }
+
+    private void PlayVoiceline()
+    {
+        _voicePlayer.PlayOneShot(_soundArray[Random.Range(0, _soundArray.Length - 1)]);
     }
 
     public float GetHoldingDistance() {
