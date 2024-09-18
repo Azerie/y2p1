@@ -52,6 +52,7 @@ MonoBehaviour:
   MaxTimer: 4000
   _animalHoldingDistance: 1
   _animalHoldingHeight: 0.3
+  _placementInCar: {x: 0, y: 1, z: 0}
 --- !u!135 &6894914136232468670
 SphereCollider:
   m_ObjectHideFlags: 0
