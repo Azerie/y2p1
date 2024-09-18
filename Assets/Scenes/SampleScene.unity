@@ -793,7 +793,7 @@ Canvas:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 426034333}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 0
   m_Camera: {fileID: 0}
@@ -2543,7 +2543,7 @@ Canvas:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1864484597}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_RenderMode: 0
   m_Camera: {fileID: 0}
@@ -2874,7 +2874,7 @@ Canvas:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2016865393}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_RenderMode: 0
   m_Camera: {fileID: 0}
@@ -3441,6 +3441,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7725028759519533280, guid: f689ac9cff75f28f7a851be0052a39a3, type: 3}
+      propertyPath: SceneToLoad
+      value: WinScreen
+      objectReference: {fileID: 0}
     - target: {fileID: 8488778531788706675, guid: f689ac9cff75f28f7a851be0052a39a3, type: 3}
       propertyPath: m_Name
       value: Car
@@ -3455,7 +3459,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8488778531788706687, guid: f689ac9cff75f28f7a851be0052a39a3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.258183
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8488778531788706687, guid: f689ac9cff75f28f7a851be0052a39a3, type: 3}
       propertyPath: m_LocalPosition.z
