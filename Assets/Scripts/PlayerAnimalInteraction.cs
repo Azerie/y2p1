@@ -57,7 +57,7 @@ public class PlayerAnimalInteraction : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collision)
     {
         // can only pick up animal if not holding anything
         if(!_isHoldingAnimal && collision.gameObject.tag == "Animal")
@@ -70,7 +70,7 @@ public class PlayerAnimalInteraction : MonoBehaviour
         }
     }
 
-    private void OnCollisionExit(Collision collision)
+    private void OnTriggerExit(Collider collision)
     {
         if (!_isHoldingAnimal && collision.gameObject.tag == "Animal")
         {
