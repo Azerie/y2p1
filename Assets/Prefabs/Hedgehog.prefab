@@ -136,7 +136,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: e9a2eb702ea6b68028aded661b8c0e99, type: 3}
   - {fileID: 8300000, guid: 9cbecff6ea0a39c34b36d0ca48397333, type: 3}
   - {fileID: 8300000, guid: 8849d1bb595ca2a17a71ffddf641bd25, type: 3}
-  - {fileID: 8300000, guid: 863753506381f79419e7a1c615768e6e, type: 3}
+  _pickupSound: {fileID: 8300000, guid: 863753506381f79419e7a1c615768e6e, type: 3}
   _animalHoldingDistance: 1
   _animalHoldingHeight: 0.3
   _placementInCar: {x: 0, y: 1, z: 0}

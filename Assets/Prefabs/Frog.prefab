@@ -52,8 +52,9 @@ MonoBehaviour:
   _soundArray:
   - {fileID: 8300000, guid: 4036d13983066e1b69b679371ecc44b7, type: 3}
   - {fileID: 8300000, guid: ec589330132cc518790cd59491e23241, type: 3}
-  - {fileID: 8300000, guid: 6aecbfbd2a2d1dcb790eb2b1dc655761, type: 3}
+  - {fileID: 8300000, guid: 97a21c03fcc547c20bbabc536b933ddf, type: 3}
   - {fileID: 8300000, guid: b542ef31440a8812ab5d5e565342a99d, type: 3}
+  _pickupSound: {fileID: 8300000, guid: 6aecbfbd2a2d1dcb790eb2b1dc655761, type: 3}
   _animalHoldingDistance: 1
   _animalHoldingHeight: 0.3
   _placementInCar: {x: 0, y: 1, z: 0}

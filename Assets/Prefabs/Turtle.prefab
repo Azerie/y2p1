@@ -50,10 +50,12 @@ MonoBehaviour:
   MinTimer: 3000
   MaxTimer: 4000
   _soundArray:
-  - {fileID: 8300000, guid: 53e4d8d8722eeb162b359aa592d08637, type: 3}
+  - {fileID: 8300000, guid: 6b69318725773c8da89cba7506399d5e, type: 3}
   - {fileID: 8300000, guid: 799137494ee7a420c9d8a621d7bc8512, type: 3}
   - {fileID: 8300000, guid: 061dbed2767370c7695514a30c275add, type: 3}
   - {fileID: 8300000, guid: 5c8d6beab7e7f4be1a9609bd1e3355d2, type: 3}
+  - {fileID: 8300000, guid: f6e5fb7287e538ab28255752f48e285a, type: 3}
+  _pickupSound: {fileID: 8300000, guid: 53e4d8d8722eeb162b359aa592d08637, type: 3}
   _animalHoldingDistance: 1
   _animalHoldingHeight: 0.3
   _placementInCar: {x: 0, y: 1, z: 0}
