@@ -19,7 +19,7 @@ public class PauseMenu : MonoBehaviour
     public void Restart()
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void Options()
@@ -38,7 +38,15 @@ public class PauseMenu : MonoBehaviour
     {
         float value = transform.GetChild(1).GetComponentInChildren<Slider>().value;
         Debug.Log(value);
-        FindObjectOfType<PlayerControls>().SetCameraSensitivity((int)Mathf.Round(value * 100));
+        PlayerControls walkControls = FindObjectOfType<PlayerControls>();
+        if (walkControls != null)
+        {
+            walkControls.SetCameraSensitivity((int)Mathf.Round(value * 100));
+        } 
+        else
+        {
+            FindObjectOfType<DriveControls>().SetCameraSensitivity((int)Mathf.Round(value * 100));
+        }
     }
 
     public void Quit()
