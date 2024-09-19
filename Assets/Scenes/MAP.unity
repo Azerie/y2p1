@@ -355,11 +355,11 @@ Terrain:
   m_Enabled: 1
   serializedVersion: 6
   m_TerrainData: {fileID: 15600000, guid: 89aedb31ce83b5e4db800a63d63c480d, type: 2}
-  m_TreeDistance: 79
-  m_TreeBillboardDistance: 50
+  m_TreeDistance: 2069
+  m_TreeBillboardDistance: 1590
   m_TreeCrossFadeLength: 5
   m_TreeMaximumFullLODCount: 50
-  m_DetailObjectDistance: 105
+  m_DetailObjectDistance: 137
   m_DetailObjectDensity: 1
   m_HeightmapPixelError: 5
   m_SplatMapDistance: 1000
@@ -370,7 +370,7 @@ Terrain:
   m_DrawTreesAndFoliage: 1
   m_StaticShadowCaster: 0
   m_ReflectionProbeUsage: 1
-  m_MaterialTemplate: {fileID: 10652, guid: 0000000000000000f000000000000000, type: 0}
+  m_MaterialTemplate: {fileID: 2100000, guid: 594ea882c5a793440b60ff72d896021e, type: 2}
   m_BakeLightProbesForTrees: 1
   m_PreserveTreePrototypeLayers: 0
   m_DeringLightProbesForTrees: 1
@@ -497,6 +497,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1856983661}
   - component: {fileID: 1856983660}
+  - component: {fileID: 1856983662}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -581,3 +582,80 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &1856983662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1856983659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 1
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+--- !u!1001 &816926027706131387
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6938705163195442483, guid: acf9fad079b09a24786d6ef7beb92011, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6938705163195442483, guid: acf9fad079b09a24786d6ef7beb92011, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 680.64764
+      objectReference: {fileID: 0}
+    - target: {fileID: 6938705163195442483, guid: acf9fad079b09a24786d6ef7beb92011, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 62.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6938705163195442483, guid: acf9fad079b09a24786d6ef7beb92011, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 759.19196
+      objectReference: {fileID: 0}
+    - target: {fileID: 6938705163195442483, guid: acf9fad079b09a24786d6ef7beb92011, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6938705163195442483, guid: acf9fad079b09a24786d6ef7beb92011, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6938705163195442483, guid: acf9fad079b09a24786d6ef7beb92011, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6938705163195442483, guid: acf9fad079b09a24786d6ef7beb92011, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6938705163195442483, guid: acf9fad079b09a24786d6ef7beb92011, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6938705163195442483, guid: acf9fad079b09a24786d6ef7beb92011, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6938705163195442483, guid: acf9fad079b09a24786d6ef7beb92011, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8789337301922784749, guid: acf9fad079b09a24786d6ef7beb92011, type: 3}
+      propertyPath: m_Name
+      value: Tree_LOD
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: acf9fad079b09a24786d6ef7beb92011, type: 3}
