@@ -46,8 +46,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5235bde890ecfa54fb9a4bbaecf5235b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MinTimer: 3000
-  MaxTimer: 4000
+  MinTimer: 15000
+  MaxTimer: 20000
+  _soundArray: []
   _animalHoldingDistance: 1
   _animalHoldingHeight: 0.3
   _placementInCar: {x: 0, y: 1, z: 0}

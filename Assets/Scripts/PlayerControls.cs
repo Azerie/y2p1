@@ -42,7 +42,19 @@ public class PlayerControls : MonoBehaviour
     [SerializeField] private int MaxCameraAngle = 50;
 
     [Space(10)]
+    [Header("Parameters")]
+    [Tooltip("Max Health")]
+    [SerializeField] private int MaxHealth = 100;
+    [Tooltip("Max Stamina (in seconds)")]
+    [SerializeField] private float MaxStamina = 5f;
+    [Tooltip("Full stamina recovery time (in seconds)")]
+    [SerializeField] private float StaminaRecoveryRate = 3f;
+
+    [Space(10)]
     [Header("Debug values")]
+    [SerializeField] private int _health;
+    [SerializeField] private float _stamina;
+
     [SerializeField] private float _speed;
 	[SerializeField] private float _rotationVelocity;
 	[SerializeField] private float _verticalVelocity;
@@ -60,6 +72,8 @@ public class PlayerControls : MonoBehaviour
     void Start()
     {
         _rb = GetComponent<Rigidbody>();
+        _health = MaxHealth;
+        _stamina = MaxStamina;
     }
 
     private void Awake()
@@ -112,9 +126,20 @@ public class PlayerControls : MonoBehaviour
 
     private void Move() 
     {
-        
+        if (_stamina <= 0) {
+            _isSprinting = false;
+        }
         // set target speed based on move speed, sprint speed and if sprint is pressed
         float targetSpeed = _isSprinting ? SprintSpeed : MoveSpeed;
+
+        if(_isSprinting) {
+            _stamina -= Time.deltaTime;
+        } else {
+            if (_stamina <= MaxStamina)
+            {
+                _stamina += Time.deltaTime * MaxStamina / StaminaRecoveryRate;
+            }
+        }
 
         // if there is no input, set the target speed to 0
         if (moveInput == Vector2.zero) targetSpeed = 0.0f;
@@ -197,5 +222,21 @@ public class PlayerControls : MonoBehaviour
     public void SetCameraSensitivity(int sensitivity)
     {
         RotationSpeed = sensitivity;
+    }
+
+    public int GetHealth() {
+        return _health;
+    }
+
+    public float GetStamina() {
+        return _stamina;
+    }
+
+    public int GetMaxHealth() {
+        return MaxHealth;
+    }
+
+    public float GetMaxStamina() {
+        return MaxStamina;
     }
 }

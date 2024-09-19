@@ -49,7 +49,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MinTimer: 3000
   MaxTimer: 4000
-  _soundArray: []
+  _soundArray:
+  - {fileID: 8300000, guid: 53e4d8d8722eeb162b359aa592d08637, type: 3}
+  - {fileID: 8300000, guid: 799137494ee7a420c9d8a621d7bc8512, type: 3}
+  - {fileID: 8300000, guid: 061dbed2767370c7695514a30c275add, type: 3}
+  - {fileID: 8300000, guid: 5c8d6beab7e7f4be1a9609bd1e3355d2, type: 3}
   _animalHoldingDistance: 1
   _animalHoldingHeight: 0.3
   _placementInCar: {x: 0, y: 1, z: 0}
