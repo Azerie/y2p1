@@ -93,8 +93,8 @@ GameObject:
   m_Component:
   - component: {fileID: 9024058083294238268}
   - component: {fileID: 9024058083294238265}
-  - component: {fileID: 9024058083294238269}
   - component: {fileID: 9024058083294238264}
+  - component: {fileID: 2482120146882791337}
   m_Layer: 0
   m_Name: Hedgehog
   m_TagString: Animal
@@ -137,22 +137,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 9cbecff6ea0a39c34b36d0ca48397333, type: 3}
   - {fileID: 8300000, guid: 8849d1bb595ca2a17a71ffddf641bd25, type: 3}
   _pickupSound: {fileID: 8300000, guid: 863753506381f79419e7a1c615768e6e, type: 3}
-  _animalHoldingDistance: 1
-  _animalHoldingHeight: 0.3
+  _animalHoldingDistance: 0.5
+  _animalHoldingHeight: 1
   _placementInCar: {x: 0, y: 1, z: 0}
---- !u!135 &9024058083294238269
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9024058083294238270}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!82 &9024058083294238264
 AudioSource:
   m_ObjectHideFlags: 0
@@ -249,3 +236,16 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!65 &2482120146882791337
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9024058083294238270}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.39, y: 0.19, z: 0.46}
+  m_Center: {x: -0.12, y: 0.12, z: 0.12}
