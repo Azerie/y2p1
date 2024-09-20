@@ -93,8 +93,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7192538324568777738}
   - component: {fileID: 7192538324568777743}
-  - component: {fileID: 7192538324568777739}
   - component: {fileID: 7192538324568777742}
+  - component: {fileID: 2241082541708237834}
   m_Layer: 0
   m_Name: Bear
   m_TagString: Animal
@@ -141,19 +141,6 @@ MonoBehaviour:
   _animalHoldingDistance: 1
   _animalHoldingHeight: 0.3
   _placementInCar: {x: 0, y: 1, z: 0}
---- !u!135 &7192538324568777739
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7192538324568777736}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!82 &7192538324568777742
 AudioSource:
   m_ObjectHideFlags: 0
@@ -250,3 +237,16 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!65 &2241082541708237834
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7192538324568777736}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.617255, y: 0.6142222, z: 1.4060594}
+  m_Center: {x: 0.02036812, y: 0.52710694, z: 0.00088391296}

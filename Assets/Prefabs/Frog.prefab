@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3056187237343733801}
   - component: {fileID: 3056187237343733804}
-  - component: {fileID: 3056187237343733800}
   - component: {fileID: 3056187237343733805}
+  - component: {fileID: 4291083698255176445}
   m_Layer: 0
   m_Name: Frog
   m_TagString: Animal
@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 3056187237343733803}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 11.98316, y: 0.000000059604645, z: -16.747822}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4959934310336039923}
@@ -47,8 +47,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5235bde890ecfa54fb9a4bbaecf5235b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MinTimer: 3000
-  MaxTimer: 4000
+  MinTimer: 5000
+  MaxTimer: 50000
   _soundArray:
   - {fileID: 8300000, guid: 4036d13983066e1b69b679371ecc44b7, type: 3}
   - {fileID: 8300000, guid: ec589330132cc518790cd59491e23241, type: 3}
@@ -58,19 +58,6 @@ MonoBehaviour:
   _animalHoldingDistance: 1
   _animalHoldingHeight: 0.3
   _placementInCar: {x: 0, y: 1, z: 0}
---- !u!135 &3056187237343733800
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3056187237343733803}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!82 &3056187237343733805
 AudioSource:
   m_ObjectHideFlags: 0
@@ -167,6 +154,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!65 &4291083698255176445
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3056187237343733803}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.4662476, y: 0.2891923, z: 0.38063276}
+  m_Center: {x: 0.20944215, y: 0.15459603, z: -0.0904977}
 --- !u!1 &5737279528450543945
 GameObject:
   m_ObjectHideFlags: 0
