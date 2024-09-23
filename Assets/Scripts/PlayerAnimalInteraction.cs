@@ -30,6 +30,7 @@ public class PlayerAnimalInteraction : MonoBehaviour
             pickupableAnimal.GetComponent<Rigidbody>().useGravity = true;
             pickupableAnimal.GetComponent<Rigidbody>().isKinematic = false;
             pickupableAnimal.GetComponent<Collider>().enabled = true;
+            pickupableAnimal.GetComponent<AnimalBehavior>().UnSave();
 
             pickupableAnimal.GetComponent<Rigidbody>().velocity = GetComponent<Rigidbody>().velocity;
             _isHoldingAnimal = false;
@@ -44,6 +45,7 @@ public class PlayerAnimalInteraction : MonoBehaviour
             pickupableAnimal.GetComponent<Rigidbody>().useGravity = false;
             pickupableAnimal.GetComponent<Rigidbody>().isKinematic = true;
             pickupableAnimal.GetComponent<Collider>().enabled = false;
+            animalInfo.Save();
 
             _isHoldingAnimal = true;
         }
