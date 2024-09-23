@@ -30,10 +30,17 @@ public class AnimalBehavior : MonoBehaviour
     private int _timeUntilNextSound;
 
     private bool _isSafe = false;
+
+    public AnimalsCollect animalsCollect;
     void Start()
     {
         _timeUntilNextSound = Random.Range(MinTimer, MaxTimer);
         _voicePlayer = GetComponent<AudioSource>();
+
+        if (animalsCollect == null)
+        {
+            animalsCollect = GameObject.FindObjectOfType<AnimalsCollect>();
+        }
     }
 
     // Update is called once per frame
@@ -85,6 +92,10 @@ public class AnimalBehavior : MonoBehaviour
             GetComponent<Collider>().enabled = false;
 
             Save();
+           if(animalsCollect != null)
+            {
+                animalsCollect.AnimalSaved();
+            }
         }
     }
 
