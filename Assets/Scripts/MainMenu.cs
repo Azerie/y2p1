@@ -8,6 +8,10 @@ using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
+    void Awake() {
+        Cursor.visible = true;
+    }
+    
     public void Play()
     {
         SceneManager.LoadScene("SampleScene");
@@ -15,7 +19,7 @@ public class MainMenu : MonoBehaviour
 
     public void Menu()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("Main Menu");
     }
 
     public void Quit()

@@ -79,6 +79,7 @@ public class PlayerControls : MonoBehaviour
     private void Awake()
     {
         _animalHandler = GetComponent<PlayerAnimalInteraction>();
+        Cursor.visible = false;
     }
 
     void Update()
@@ -217,6 +218,7 @@ public class PlayerControls : MonoBehaviour
         Time.timeScale = 0;
         GameObject pauseMenu = GameObject.FindGameObjectWithTag("PauseMenu");
         pauseMenu.transform.GetComponent<Canvas>().enabled = true;
+        Cursor.visible = true;
     }
 
     public void SetCameraSensitivity(int sensitivity)
