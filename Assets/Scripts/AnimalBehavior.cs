@@ -28,6 +28,8 @@ public class AnimalBehavior : MonoBehaviour
 
     private AudioSource _voicePlayer;
     private int _timeUntilNextSound;
+
+    private bool _isSafe = false;
     void Start()
     {
         _timeUntilNextSound = Random.Range(MinTimer, MaxTimer);
@@ -37,12 +39,14 @@ public class AnimalBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _timeUntilNextSound -= Mathf.RoundToInt(Time.deltaTime * 1000);
-        if(_timeUntilNextSound <= 0) 
-        {
-            PlayVoiceline();
-            // uncomment after adding sounds
-            _timeUntilNextSound = Random.Range(MinTimer, MaxTimer);
+        if(!_isSafe) {
+            _timeUntilNextSound -= Mathf.RoundToInt(Time.deltaTime * 1000);
+            if(_timeUntilNextSound <= 0) 
+            {
+                PlayVoiceline();
+                // uncomment after adding sounds
+                _timeUntilNextSound = Random.Range(MinTimer, MaxTimer);
+            }
         }
     }
 
@@ -68,4 +72,23 @@ public class AnimalBehavior : MonoBehaviour
     public Vector3 GetPlacementInCar() {
         return _placementInCar;
     }
+
+    void OnCollisionEnter(Collision collision) {
+        if(collision.gameObject.tag == "Car") {
+            transform.parent = collision.gameObject.transform;
+            collision.gameObject.GetComponent<CarBehavior>().CheckAnimalsNumber();
+            // change localposition to position to be able to find values in editor
+            transform.localPosition = GetComponent<AnimalBehavior>().GetPlacementInCar();
+
+            GetComponent<Rigidbody>().useGravity = false;
+            GetComponent<Rigidbody>().isKinematic = true;
+            GetComponent<Collider>().enabled = false;
+
+            Save();
+        }
+    }
+
+    public void Save() { _isSafe = true; }
+
+    public void UnSave() { _isSafe = false; }
 }

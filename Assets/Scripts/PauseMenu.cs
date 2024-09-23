@@ -14,6 +14,7 @@ public class PauseMenu : MonoBehaviour
     {
         Time.timeScale = 1;
         GetComponent<Canvas>().enabled = false;
+        Cursor.visible = false;
     }
 
     public void Restart()

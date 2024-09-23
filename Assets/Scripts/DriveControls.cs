@@ -41,6 +41,9 @@ public class DriveControls : MonoBehaviour
         cam = GetComponentInChildren<Camera>();
     }
 
+    void Awake() {
+        Cursor.visible = false;
+    }
 
     void Update()
     {
@@ -98,6 +101,7 @@ public class DriveControls : MonoBehaviour
         Time.timeScale = 0;
         GameObject pauseMenu = GameObject.FindGameObjectWithTag("PauseMenu");
         pauseMenu.transform.GetComponent<Canvas>().enabled = true;
+        Cursor.visible = true;
     }
 
     public void SetCameraSensitivity(int sensitivity)
