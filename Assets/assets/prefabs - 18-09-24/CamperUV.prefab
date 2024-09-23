@@ -11,17 +11,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 140e7a373fff71144a2205c9128ab67d,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 140e7a373fff71144a2205c9128ab67d,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 140e7a373fff71144a2205c9128ab67d,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 140e7a373fff71144a2205c9128ab67d,
         type: 3}
@@ -149,8 +149,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.017549038, y: 0.006697297, z: 0.026071906}
-  m_Center: {x: -0.018506369, y: 0.022876542, z: -0.02726847}
+  m_Size: {x: 0.06376648, y: 0.019310117, z: 0.087568164}
+  m_Center: {x: -0.05234742, y: 0.07288903, z: -0.08388978}
 --- !u!65 &794467918548228209
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -170,8 +170,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.033726215, y: 0.03870239, z: 0.076306984}
-  m_Center: {x: -0.018790087, y: 0.00013666353, z: -0.019588947}
+  m_Size: {x: 0.10886923, y: 0.11342108, z: 0.2367661}
+  m_Center: {x: -0.056361597, y: -0.000536263, z: -0.05578971}
 --- !u!65 &3939960508678048372
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -191,8 +191,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.0033893562, y: 0.006831815, z: 0.020041427}
-  m_Center: {x: -0.019466083, y: -0.015798634, z: 0.027495842}
+  m_Size: {x: 0.024541616, y: 0.018578112, z: 0.059141994}
+  m_Center: {x: -0.05725634, y: -0.046013564, z: 0.08214873}
 --- !u!65 &813406428483603614
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -212,5 +212,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.00736626, y: 0.022020042, z: 0.00928295}
-  m_Center: {x: -0.0026663542, y: 0.00027979416, z: 0.00040012412}
+  m_Size: {x: 0.0075513534, y: 0.060213447, z: 0.033990502}
+  m_Center: {x: -0.0025738087, y: 0.00055497885, z: 0.0027775168}
