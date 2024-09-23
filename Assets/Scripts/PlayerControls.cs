@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerControls : MonoBehaviour
 {
@@ -44,15 +45,18 @@ public class PlayerControls : MonoBehaviour
     [Space(10)]
     [Header("Parameters")]
     [Tooltip("Max Health")]
-    [SerializeField] private int MaxHealth = 100;
+    [SerializeField] private float MaxHealth = 100;
     [Tooltip("Max Stamina (in seconds)")]
     [SerializeField] private float MaxStamina = 5f;
     [Tooltip("Full stamina recovery time (in seconds)")]
     [SerializeField] private float StaminaRecoveryRate = 3f;
 
     [Space(10)]
+    [SerializeField] private string FailScene;
+
+    [Space(10)]
     [Header("Debug values")]
-    [SerializeField] private int _health;
+    [SerializeField] private float _health;
     [SerializeField] private float _stamina;
 
     [SerializeField] private float _speed;
@@ -226,7 +230,16 @@ public class PlayerControls : MonoBehaviour
         RotationSpeed = sensitivity;
     }
 
-    public int GetHealth() {
+    public void TakeDamage(float d)
+    {
+        _health -= d;
+        if(_health <= 0 ) 
+        {
+            SceneManager.LoadScene(FailScene);
+        }
+    }
+
+    public float GetHealth() {
         return _health;
     }
 
@@ -234,7 +247,7 @@ public class PlayerControls : MonoBehaviour
         return _stamina;
     }
 
-    public int GetMaxHealth() {
+    public float GetMaxHealth() {
         return MaxHealth;
     }
 

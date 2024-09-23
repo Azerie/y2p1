@@ -283,6 +283,7 @@ MonoBehaviour:
   MaxHealth: 100
   MaxStamina: 5
   StaminaRecoveryRate: 3
+  FailScene: LoseScreen
   _health: 0
   _stamina: 0
   _speed: 0
