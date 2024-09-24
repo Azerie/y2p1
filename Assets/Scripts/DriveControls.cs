@@ -16,6 +16,7 @@ public class DriveControls : MonoBehaviour
     [SerializeField] private int MaxCameraAngle = 50;
 
     [Header("Car")]
+    [SerializeField] private bool _isPossibleToLeave = true;
     [Tooltip("Base motor force")]
     [SerializeField] private float _motorForce = 4000f;
     [Tooltip("Idle break force")]
@@ -119,14 +120,17 @@ public class DriveControls : MonoBehaviour
 
     private void OnInteract()
     {
-        GetComponentInChildren<PlayerInput>().enabled = false;
-        Transform player = transform.Find("Player");
-        player.SetParent(transform.parent);
-        player.GetComponent<PlayerInput>().enabled = true;
-        player.GetComponentInChildren<CapsuleCollider>().enabled = true;
-        player.GetComponent<Rigidbody>().isKinematic = false;
-        player.GetComponentInChildren<Camera>().transform.parent.localRotation = Quaternion.Euler(0,0,0);
-        _audioSource.PlayOneShot(carDoor);
+        if (_isPossibleToLeave)
+        {
+            GetComponentInChildren<PlayerInput>().enabled = false;
+            Transform player = transform.Find("Player");
+            player.SetParent(transform.parent);
+            player.GetComponent<PlayerInput>().enabled = true;
+            player.GetComponentInChildren<CapsuleCollider>().enabled = true;
+            player.GetComponent<Rigidbody>().isKinematic = false;
+            player.GetComponentInChildren<Camera>().transform.parent.localRotation = Quaternion.Euler(0, 0, 0);
+            _audioSource.PlayOneShot(carDoor);
+        }
     }
 
     public void SetCameraSensitivity(int sensitivity)
