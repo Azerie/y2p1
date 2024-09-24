@@ -82,24 +82,32 @@ public class AnimalBehavior : MonoBehaviour
 
     void OnCollisionEnter(Collision collision) {
         if(collision.gameObject.tag == "Car") {
-            transform.parent = collision.gameObject.transform;
-            collision.gameObject.GetComponent<CarBehavior>().CheckAnimalsNumber();
-            // change localposition to position to be able to find values in editor
-            transform.localPosition = GetComponent<AnimalBehavior>().GetPlacementInCar();
+            MoveToCar();
+        }
+    }
 
-            GetComponent<Rigidbody>().useGravity = false;
-            GetComponent<Rigidbody>().isKinematic = true;
-            GetComponent<Collider>().enabled = false;
+    public void MoveToCar()
+    {
+        GameObject car = GameObject.FindWithTag("Car");
+        GetComponent<Rigidbody>().useGravity = false;
+        GetComponent<Rigidbody>().isKinematic = true;
+        GetComponent<Collider>().enabled = false;
+        transform.parent = car.transform;
+        car.GetComponent<CarBehavior>().CheckAnimalsNumber();
+        transform.localPosition = GetComponent<AnimalBehavior>().GetPlacementInCar();
 
-            Save();
-           if(animalsCollect != null)
-            {
-                animalsCollect.AnimalSaved();
-            }
+        
+
+        Save();
+        if (animalsCollect != null)
+        {
+            animalsCollect.AnimalSaved();
         }
     }
 
     public void Save() { _isSafe = true; }
 
     public void UnSave() { _isSafe = false; }
+
+    public bool IsSafe() { return _isSafe; }
 }

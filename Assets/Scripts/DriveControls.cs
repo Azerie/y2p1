@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.ConstrainedExecution;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -84,6 +85,7 @@ public class DriveControls : MonoBehaviour
 
     private void OnLook(InputValue value) 
     {
+        cam = GetComponentInChildren<Camera>();
         _rotationVelocity = value.Get<Vector2>().x * RotationSpeed * Time.deltaTime;
 
         // rotate the camera left and right
@@ -102,6 +104,17 @@ public class DriveControls : MonoBehaviour
         GameObject pauseMenu = GameObject.FindGameObjectWithTag("PauseMenu");
         pauseMenu.transform.GetComponent<Canvas>().enabled = true;
         Cursor.visible = true;
+    }
+
+    private void OnInteract()
+    {
+        GetComponentInChildren<PlayerInput>().enabled = false;
+        Transform player = transform.Find("Player");
+        player.SetParent(transform.parent);
+        player.GetComponent<PlayerInput>().enabled = true;
+        player.GetComponentInChildren<CapsuleCollider>().enabled = true;
+        player.GetComponent<Rigidbody>().isKinematic = false;
+        player.GetComponentInChildren<Camera>().transform.parent.localRotation = Quaternion.Euler(0,0,0);
     }
 
     public void SetCameraSensitivity(int sensitivity)

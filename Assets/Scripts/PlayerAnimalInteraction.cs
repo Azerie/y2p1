@@ -1,14 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerAnimalInteraction : MonoBehaviour
 {
     private GameObject pickupableAnimal;
     private GameObject car;
     private bool _isHoldingAnimal = false;
-    // [SerializeField] private float _animalHoldingDistance;
-    // [SerializeField] private float _animalInCarPlacingHeight;
+    private bool _isNearCar = false;
+
 
     private void Awake()
     {
@@ -17,7 +18,11 @@ public class PlayerAnimalInteraction : MonoBehaviour
 
     public void Interact()
     {
-        if(_isHoldingAnimal) 
+        if (_isHoldingAnimal && _isNearCar)
+        {
+            pickupableAnimal.GetComponent<AnimalBehavior>().MoveToCar();
+        }
+        else if(_isHoldingAnimal) 
         {
             // drop animal on the ground
             pickupableAnimal.transform.parent = transform.parent;
@@ -35,7 +40,7 @@ public class PlayerAnimalInteraction : MonoBehaviour
             pickupableAnimal.GetComponent<Rigidbody>().velocity = GetComponent<Rigidbody>().velocity;
             _isHoldingAnimal = false;
         }
-        else if(pickupableAnimal != null) 
+        else if(pickupableAnimal != null && !pickupableAnimal.GetComponent<AnimalBehavior>().IsSafe()) 
         {
             AnimalBehavior animalInfo = pickupableAnimal.GetComponent<AnimalBehavior>();
             pickupableAnimal.transform.parent = transform;
@@ -49,6 +54,20 @@ public class PlayerAnimalInteraction : MonoBehaviour
 
             _isHoldingAnimal = true;
         }
+        else if(_isNearCar)
+        {
+            MoveToCar();
+        }
+    }
+
+    private void MoveToCar()
+    {
+        car.GetComponentInChildren<PlayerInput>().enabled = true;
+        gameObject.transform.SetParent(car.transform);
+        gameObject.GetComponent<PlayerInput>().enabled = false;
+        gameObject.GetComponentInChildren<CapsuleCollider>().enabled = false;
+        gameObject.GetComponent<Rigidbody>().isKinematic = true;
+        gameObject.transform.localPosition = new Vector3(-0.9213f, 0.175f, -0.826f);
     }
 
     private void OnTriggerEnter(Collider collision)
@@ -58,6 +77,10 @@ public class PlayerAnimalInteraction : MonoBehaviour
         {
             pickupableAnimal = collision.gameObject;
         }
+        else if(collision.gameObject.tag == "Car")
+        {
+            _isNearCar = true;
+        }
     }
 
     private void OnTriggerExit(Collider collision)
@@ -65,6 +88,10 @@ public class PlayerAnimalInteraction : MonoBehaviour
         if (!_isHoldingAnimal && collision.gameObject.tag == "Animal")
         {
             pickupableAnimal = null;
+        }
+        else if (collision.gameObject.tag == "Car")
+        {
+            _isNearCar = false;
         }
     }
 }

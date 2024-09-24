@@ -12,7 +12,7 @@ public class CarBehavior : MonoBehaviour
 
     public void CheckAnimalsNumber()
     {
-        if (transform.childCount >= AnimalsToProgress + 1) {
+        if (transform.childCount >= AnimalsToProgress + 3) {
             SceneManager.LoadScene(SceneToLoad);
         }
     }
