@@ -105,9 +105,25 @@ public class AnimalBehavior : MonoBehaviour
         }
     }
 
-    public void Save() { _isSafe = true; }
+    public void Save() 
+    { 
+        _isSafe = true; 
+        Animator animator = GetComponentInChildren<Animator>();
+        if(animator != null)
+        {
+            animator.StopPlayback();
+        }
+    }
 
-    public void UnSave() { _isSafe = false; }
+    public void UnSave() 
+    { 
+        _isSafe = false;
+        Animator animator = GetComponentInChildren<Animator>();
+        if (animator != null)
+        {
+            animator.StartPlayback();
+        }
+    }
 
     public bool IsSafe() { return _isSafe; }
 }
