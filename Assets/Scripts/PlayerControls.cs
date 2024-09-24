@@ -55,6 +55,11 @@ public class PlayerControls : MonoBehaviour
     [SerializeField] private string FailScene;
 
     [Space(10)]
+    [Header("Sound")]
+    [SerializeField] private AudioClip runSound;
+    [SerializeField] private AudioClip walkSound;
+
+    [Space(10)]
     [Header("Debug values")]
     [SerializeField] private float _health;
     [SerializeField] private float _stamina;
@@ -72,10 +77,12 @@ public class PlayerControls : MonoBehaviour
 
     private Rigidbody _rb;
     private PlayerAnimalInteraction _animalHandler;
+    private AudioSource _audioSource;
 
     void Start()
     {
         _rb = GetComponent<Rigidbody>();
+        _audioSource = GetComponent<AudioSource>();
         _health = MaxHealth;
         _stamina = MaxStamina;
     }
@@ -177,6 +184,18 @@ public class PlayerControls : MonoBehaviour
 
         // move the player
         _rb.velocity = inputDirection.normalized * _speed + new Vector3(0.0f, _verticalVelocity, 0.0f);
+
+        if(Math.Abs(_speed) > speedOffset && !_audioSource.isPlaying)
+        {
+            if(_isSprinting)
+            {
+                _audioSource.PlayOneShot(runSound);
+            }
+            else
+            {
+                _audioSource.PlayOneShot(walkSound);
+            }
+        }
     }
 
     private void OnMove(InputValue value)

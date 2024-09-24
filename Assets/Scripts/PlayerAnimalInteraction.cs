@@ -21,6 +21,7 @@ public class PlayerAnimalInteraction : MonoBehaviour
         if (_isHoldingAnimal && _isNearCar)
         {
             pickupableAnimal.GetComponent<AnimalBehavior>().MoveToCar();
+            _isHoldingAnimal = false;
         }
         else if(_isHoldingAnimal) 
         {

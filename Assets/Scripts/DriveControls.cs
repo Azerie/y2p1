@@ -28,6 +28,11 @@ public class DriveControls : MonoBehaviour
     [SerializeField] private WheelCollider BackLeftWheel;
     [SerializeField] private WheelCollider BackRightWheel;
 
+    [Header("Sound")]
+    [SerializeField] private AudioClip carDoor;
+    [SerializeField] private AudioClip carDrive;
+
+
     private float _rotationVelocity;
     private float _cameraYrotation = 0f;
     private float _currentSteeringAngle = 0;
@@ -36,10 +41,12 @@ public class DriveControls : MonoBehaviour
     private Vector2 lookInput = Vector2.zero;
 
     private Camera cam;
+    private AudioSource _audioSource;
 
     void Start()
     {
         cam = GetComponentInChildren<Camera>();
+        _audioSource = GetComponent<AudioSource>();
     }
 
     void Awake() {
@@ -59,6 +66,10 @@ public class DriveControls : MonoBehaviour
         {
             torque = 0;
             breakTorque = _brakeForce;
+        }
+        else if(!_audioSource.isPlaying)
+        {
+            _audioSource.PlayOneShot(carDrive);
         }
         FwdLeftWheel.motorTorque = torque;
         FwdRightWheel.motorTorque = torque;
@@ -115,6 +126,7 @@ public class DriveControls : MonoBehaviour
         player.GetComponentInChildren<CapsuleCollider>().enabled = true;
         player.GetComponent<Rigidbody>().isKinematic = false;
         player.GetComponentInChildren<Camera>().transform.parent.localRotation = Quaternion.Euler(0,0,0);
+        _audioSource.PlayOneShot(carDoor);
     }
 
     public void SetCameraSensitivity(int sensitivity)
