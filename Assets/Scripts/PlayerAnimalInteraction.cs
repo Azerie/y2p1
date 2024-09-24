@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerAnimalInteraction : MonoBehaviour
 {
+    [SerializeField] private bool _isBuildingCampfire = false;
     private GameObject pickupableAnimal;
     private GameObject car;
     private bool _isHoldingAnimal = false;
@@ -57,7 +59,14 @@ public class PlayerAnimalInteraction : MonoBehaviour
         }
         else if(_isNearCar)
         {
-            MoveToCar();
+            if(_isBuildingCampfire)
+            {
+                SceneManager.LoadScene("MAP");
+            }
+            else
+            {
+                MoveToCar();
+            }
         }
     }
 

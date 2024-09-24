@@ -14,7 +14,7 @@ public class MainMenu : MonoBehaviour
     
     public void Play()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("Start map");
     }
 
     public void Menu()

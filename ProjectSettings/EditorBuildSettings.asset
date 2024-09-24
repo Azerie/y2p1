@@ -17,4 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LoseScreen.unity
     guid: 157b1de4188760740a5dac5b13affd15
+  - enabled: 1
+    path: Assets/Scenes/Start map.unity
+    guid: 340168f099239bc459a112e5429fb707
+  - enabled: 1
+    path: Assets/Scenes/intermission.unity
+    guid: 91684889ee576314c9658688a54c5d0f
   m_configObjects: {}

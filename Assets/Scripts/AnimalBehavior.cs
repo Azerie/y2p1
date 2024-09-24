@@ -59,13 +59,19 @@ public class AnimalBehavior : MonoBehaviour
 
     private void PlayVoiceline()
     {
-        _voicePlayer.PlayOneShot(_soundArray[Random.Range(0, _soundArray.Length - 1)]);
+        if (_voicePlayer != null)
+        {
+            _voicePlayer.PlayOneShot(_soundArray[Random.Range(0, _soundArray.Length - 1)]);
+        }
     }
 
     public void PlayPickup()
     {
-        _voicePlayer.PlayOneShot(_pickupSound);
-        _timeUntilNextSound = Random.Range(MinTimer, MaxTimer);
+        if (_voicePlayer != null)
+        {
+            _voicePlayer.PlayOneShot(_pickupSound);
+            _timeUntilNextSound = Random.Range(MinTimer, MaxTimer);
+        }
     }
 
     public float GetHoldingDistance() {

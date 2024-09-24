@@ -17,6 +17,7 @@ public class BarBehaviour : MonoBehaviour
     private void Awake()
     {
         maxBar = transform.parent.GetComponent<RectTransform>().rect.width;
+        transform.GetComponent<RectTransform>().offsetMax = new Vector2(0f, transform.GetComponent<RectTransform>().offsetMax.y);
     }
 
     // Update is called once per frame
