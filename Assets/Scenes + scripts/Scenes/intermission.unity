@@ -479,7 +479,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4785226271423879065, guid: 4702f1ad50a7c294d9fe35ae364c74e0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 50.47
+      value: 51.09
       objectReference: {fileID: 0}
     - target: {fileID: 4785226271423879065, guid: 4702f1ad50a7c294d9fe35ae364c74e0, type: 3}
       propertyPath: m_LocalPosition.z
@@ -527,15 +527,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4785226271423879067, guid: 4702f1ad50a7c294d9fe35ae364c74e0, type: 3}
       propertyPath: MoveSpeed
-      value: 30
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 4785226271423879067, guid: 4702f1ad50a7c294d9fe35ae364c74e0, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4785226271423879067, guid: 4702f1ad50a7c294d9fe35ae364c74e0, type: 3}
       propertyPath: SprintSpeed
-      value: 45
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 4785226271423879068, guid: 4702f1ad50a7c294d9fe35ae364c74e0, type: 3}
       propertyPath: m_Radius
@@ -549,9 +549,7 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 4785226271423879067, guid: 4702f1ad50a7c294d9fe35ae364c74e0, type: 3}
-    - {fileID: 4785226271423879069, guid: 4702f1ad50a7c294d9fe35ae364c74e0, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4702f1ad50a7c294d9fe35ae364c74e0, type: 3}
 --- !u!4 &333017173 stripped
 Transform:
@@ -3193,11 +3191,11 @@ PrefabInstance:
     - target: {fileID: 8448495946097156989, guid: 28b284145520afe45a015f32a6af1bde, type: 3}
       propertyPath: m_fontAsset
       value: 
-      objectReference: {fileID: 11400000, guid: f03b022795e16b0419cc4db2b3628bef, type: 2}
+      objectReference: {fileID: 11400000, guid: 55bf3fcb5bb409548936c93921232360, type: 2}
     - target: {fileID: 8448495946097156989, guid: 28b284145520afe45a015f32a6af1bde, type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: -5315403089759912061, guid: f03b022795e16b0419cc4db2b3628bef, type: 2}
+      objectReference: {fileID: 8723161185511144849, guid: 55bf3fcb5bb409548936c93921232360, type: 2}
     - target: {fileID: 8448495946626632569, guid: 28b284145520afe45a015f32a6af1bde, type: 3}
       propertyPath: m_Pivot.x
       value: 0
