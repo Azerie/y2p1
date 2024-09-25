@@ -59,7 +59,7 @@ public class AnimalBehavior : MonoBehaviour
 
     private void PlayVoiceline()
     {
-        if (_voicePlayer != null)
+        if (_voicePlayer != null && _soundArray.Length != 0)
         {
             _voicePlayer.PlayOneShot(_soundArray[Random.Range(0, _soundArray.Length - 1)]);
         }
