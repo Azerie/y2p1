@@ -181,10 +181,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Light up a cigarette
+  m_text: Drop your cigarette
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f03b022795e16b0419cc4db2b3628bef, type: 2}
+  m_sharedMaterial: {fileID: -5315403089759912061, guid: f03b022795e16b0419cc4db2b3628bef, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -378,6 +378,51 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8448495946626632573, guid: 28b284145520afe45a015f32a6af1bde, type: 3}
   m_PrefabInstance: {fileID: 1881923230}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &218140406 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4785226270245847088, guid: 4702f1ad50a7c294d9fe35ae364c74e0, type: 3}
+  m_PrefabInstance: {fileID: 253032107}
+  m_PrefabAsset: {fileID: 0}
+--- !u!20 &218140407 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 4785226270245847090, guid: 4702f1ad50a7c294d9fe35ae364c74e0, type: 3}
+  m_PrefabInstance: {fileID: 253032107}
+  m_PrefabAsset: {fileID: 0}
+--- !u!328 &218140411
+VideoPlayer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 218140406}
+  m_Enabled: 1
+  m_VideoClip: {fileID: 32900000, guid: c21bcce4577e395469319c59e619b307, type: 3}
+  m_TargetCameraAlpha: 1
+  m_TargetCamera3DLayout: 0
+  m_TargetCamera: {fileID: 218140407}
+  m_TargetTexture: {fileID: 8400000, guid: cbb9d2248a7e77a4ab3bd55ef487ccfb, type: 2}
+  m_TimeReference: 0
+  m_TargetMaterialRenderer: {fileID: 0}
+  m_TargetMaterialProperty: <noninit>
+  m_RenderMode: 1
+  m_AspectRatio: 2
+  m_DataSource: 0
+  m_PlaybackSpeed: 1
+  m_AudioOutputMode: 2
+  m_TargetAudioSources:
+  - {fileID: 0}
+  m_DirectAudioVolumes:
+  - 1
+  m_Url: 
+  m_EnabledAudioTracks: 01
+  m_DirectAudioMutes: 00
+  m_ControlledAudioTrackCount: 1
+  m_PlayOnAwake: 0
+  m_SkipOnDrop: 0
+  m_Looping: 0
+  m_WaitForFirstFrame: 1
+  m_FrameReadyEventEnabled: 0
+  m_VideoShaders: []
 --- !u!1 &246990581
 GameObject:
   m_ObjectHideFlags: 0
@@ -3139,8 +3184,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8448495946097156989, guid: 28b284145520afe45a015f32a6af1bde, type: 3}
       propertyPath: m_text
-      value: Press E to pick up/put down stones
+      value: Press E to pick up items
       objectReference: {fileID: 0}
+    - target: {fileID: 8448495946097156989, guid: 28b284145520afe45a015f32a6af1bde, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: f03b022795e16b0419cc4db2b3628bef, type: 2}
+    - target: {fileID: 8448495946097156989, guid: 28b284145520afe45a015f32a6af1bde, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -5315403089759912061, guid: f03b022795e16b0419cc4db2b3628bef, type: 2}
     - target: {fileID: 8448495946626632569, guid: 28b284145520afe45a015f32a6af1bde, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -3228,6 +3281,10 @@ PrefabInstance:
     - target: {fileID: 8448495946626632573, guid: 28b284145520afe45a015f32a6af1bde, type: 3}
       propertyPath: m_Name
       value: HUD
+      objectReference: {fileID: 0}
+    - target: {fileID: 8448495946909491846, guid: 28b284145520afe45a015f32a6af1bde, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8448495947106605680, guid: 28b284145520afe45a015f32a6af1bde, type: 3}
       propertyPath: m_IsActive
