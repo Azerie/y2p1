@@ -844,8 +844,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5235bde890ecfa54fb9a4bbaecf5235b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MinTimer: 5000
-  MaxTimer: 50000
+  MinTimer: 2500
+  MaxTimer: 20000
   _soundArray:
   - {fileID: 8300000, guid: 704b7c4ab92b0c831acd5e0d70162214, type: 3}
   - {fileID: 8300000, guid: a727ee44cf7b4cc619077629525da183, type: 3}
@@ -997,8 +997,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5235bde890ecfa54fb9a4bbaecf5235b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MinTimer: 5000
-  MaxTimer: 50000
+  MinTimer: 2500
+  MaxTimer: 20000
   _soundArray:
   - {fileID: 8300000, guid: 4036d13983066e1b69b679371ecc44b7, type: 3}
   - {fileID: 8300000, guid: ec589330132cc518790cd59491e23241, type: 3}
@@ -2433,8 +2433,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5235bde890ecfa54fb9a4bbaecf5235b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MinTimer: 5000
-  MaxTimer: 50000
+  MinTimer: 2500
+  MaxTimer: 25000
   _soundArray:
   - {fileID: 8300000, guid: 6b69318725773c8da89cba7506399d5e, type: 3}
   - {fileID: 8300000, guid: 799137494ee7a420c9d8a621d7bc8512, type: 3}
@@ -3538,8 +3538,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5235bde890ecfa54fb9a4bbaecf5235b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MinTimer: 5000
-  MaxTimer: 50000
+  MinTimer: 2500
+  MaxTimer: 20000
   _soundArray:
   - {fileID: 8300000, guid: e9a2eb702ea6b68028aded661b8c0e99, type: 3}
   - {fileID: 8300000, guid: 9cbecff6ea0a39c34b36d0ca48397333, type: 3}
@@ -4044,8 +4044,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5235bde890ecfa54fb9a4bbaecf5235b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MinTimer: 5000
-  MaxTimer: 50000
+  MinTimer: 2500
+  MaxTimer: 25000
   _soundArray:
   - {fileID: 8300000, guid: 47395153562131fcc8f25aa418d8932e, type: 3}
   - {fileID: 8300000, guid: 86fc50374033fa75792645afb2ef6d87, type: 3}
@@ -4653,8 +4653,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5235bde890ecfa54fb9a4bbaecf5235b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MinTimer: 5000
-  MaxTimer: 50000
+  MinTimer: 2500
+  MaxTimer: 20000
   _soundArray:
   - {fileID: 8300000, guid: 94b1235c72620b507ad01f788b38a6a1, type: 3}
   - {fileID: 8300000, guid: a02a5ce85bc05f9d2b44be770f6653dd, type: 3}
