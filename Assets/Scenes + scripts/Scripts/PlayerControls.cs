@@ -61,7 +61,6 @@ public class PlayerControls : MonoBehaviour
     [SerializeField] private AudioClip burnSound;
     [SerializeField] private AudioSource _audioSource2;
 
-
     [Space(10)]
     [Header("Debug values")]
     [SerializeField] private float _health;

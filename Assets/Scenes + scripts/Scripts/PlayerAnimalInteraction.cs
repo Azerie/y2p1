@@ -7,6 +7,9 @@ using UnityEngine.SceneManagement;
 public class PlayerAnimalInteraction : MonoBehaviour
 {
     [SerializeField] private bool _isBuildingCampfire = false;
+
+    [SerializeField] private Canvas promptReminder;
+
     private GameObject pickupableAnimal;
     private GameObject car;
     private bool _isHoldingAnimal = false;
@@ -82,6 +85,10 @@ public class PlayerAnimalInteraction : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
+        if(promptReminder != null && (collision.gameObject.tag == "Animal" || collision.gameObject.tag == "Car"))
+        {
+            promptReminder.enabled = true;
+        }
         // can only pick up animal if not holding anything
         if(!_isHoldingAnimal && collision.gameObject.tag == "Animal")
         {
@@ -95,6 +102,10 @@ public class PlayerAnimalInteraction : MonoBehaviour
 
     private void OnTriggerExit(Collider collision)
     {
+        if (promptReminder != null && (collision.gameObject.tag == "Animal" || collision.gameObject.tag == "Car"))
+        {
+            promptReminder.enabled = false;
+        }
         if (!_isHoldingAnimal && collision.gameObject.tag == "Animal")
         {
             pickupableAnimal = null;
