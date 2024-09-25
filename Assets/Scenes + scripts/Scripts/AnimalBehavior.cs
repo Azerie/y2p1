@@ -101,8 +101,9 @@ public class AnimalBehavior : MonoBehaviour
         transform.parent = car.transform;
         car.GetComponent<CarBehavior>().CheckAnimalsNumber();
         transform.localPosition = GetComponent<AnimalBehavior>().GetPlacementInCar();
+        transform.localRotation = Quaternion.Euler(0, 0, 0);
 
-        
+
 
         Save();
         if (animalsCollect != null)
