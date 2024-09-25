@@ -87,6 +87,7 @@ GameObject:
   - component: {fileID: 2258463174449774298}
   - component: {fileID: 8351247723781855440}
   - component: {fileID: 8491901653959851008}
+  - component: {fileID: 4406089464483055662}
   m_Layer: 5
   m_Name: Timer
   m_TagString: Untagged
@@ -153,6 +154,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &4406089464483055662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2008437655061823164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db14ef1983beb7749a3f4ea72c7713f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timerText: {fileID: 6859315177915285085}
+  remainingTime: 300
 --- !u!1 &4099381525744011131
 GameObject:
   m_ObjectHideFlags: 0
@@ -163,6 +178,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2589822263152208018}
   - component: {fileID: 6755328878221444481}
+  - component: {fileID: 7057664661381130543}
   - component: {fileID: 7758264195370340529}
   m_Layer: 5
   m_Name: Animal counter
@@ -200,6 +216,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4099381525744011131}
   m_CullTransparentMesh: 1
+--- !u!114 &7057664661381130543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4099381525744011131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3049d4f3b1928744293f1320bacf6b12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animalsSavedText: {fileID: 1461543271792927514}
 --- !u!114 &7758264195370340529
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -542,6 +571,7 @@ GameObject:
   - component: {fileID: 8448495946626632569}
   - component: {fileID: 8448495946626632568}
   - component: {fileID: 8448495946626632571}
+  - component: {fileID: 2742378201945904884}
   - component: {fileID: 8448495946626632570}
   m_Layer: 5
   m_Name: HUD
@@ -619,6 +649,19 @@ MonoBehaviour:
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
   m_PresetInfoIsWorld: 0
+--- !u!114 &2742378201945904884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8448495946626632573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3049d4f3b1928744293f1320bacf6b12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animalsSavedText: {fileID: 1461543271792927514}
 --- !u!114 &8448495946626632570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1130,11 +1173,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5172150949291246506, guid: f8466fc975f8d2144aaf7b7a8ea78e28, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 83
+      value: 48
       objectReference: {fileID: 0}
     - target: {fileID: 5172150949291246506, guid: f8466fc975f8d2144aaf7b7a8ea78e28, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 99
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 5172150949291246506, guid: f8466fc975f8d2144aaf7b7a8ea78e28, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1154,6 +1197,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8466fc975f8d2144aaf7b7a8ea78e28, type: 3}
+--- !u!114 &6859315177915285085 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5172150949291246504, guid: f8466fc975f8d2144aaf7b7a8ea78e28, type: 3}
+  m_PrefabInstance: {fileID: 1798630794145676789}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &6859315177915285087 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5172150949291246506, guid: f8466fc975f8d2144aaf7b7a8ea78e28, type: 3}
@@ -1261,3 +1315,14 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2983250118786306946, guid: 0ad57bf679a618142978d9006032bbe6, type: 3}
   m_PrefabInstance: {fileID: 4408694121132339355}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1461543271792927514 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2983250118786306945, guid: 0ad57bf679a618142978d9006032bbe6, type: 3}
+  m_PrefabInstance: {fileID: 4408694121132339355}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

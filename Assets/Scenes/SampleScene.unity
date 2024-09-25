@@ -3879,6 +3879,14 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 6859315177915285087, guid: 28b284145520afe45a015f32a6af1bde, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 52
+      objectReference: {fileID: 0}
+    - target: {fileID: 6859315177915285087, guid: 28b284145520afe45a015f32a6af1bde, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -3
+      objectReference: {fileID: 0}
     - target: {fileID: 8448495946626632569, guid: 28b284145520afe45a015f32a6af1bde, type: 3}
       propertyPath: m_Pivot.x
       value: 0
