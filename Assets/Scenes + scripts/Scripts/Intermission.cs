@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Video;
-using static UnityEditor.UIElements.CurveField;
 
 public class Intermission : MonoBehaviour
 {
@@ -28,5 +27,10 @@ public class Intermission : MonoBehaviour
     void OnMovieEnded(VideoPlayer video)
     {
         SceneManager.LoadScene("MAP");
+    }
+
+    private void Update()
+    {
+        Cursor.visible = true;
     }
 }
