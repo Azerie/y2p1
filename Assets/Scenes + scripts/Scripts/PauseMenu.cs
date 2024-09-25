@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
+using UnityEditor.Experimental.GraphView;
 using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -13,7 +14,9 @@ public class PauseMenu : MonoBehaviour
 
 
 
+
     private bool isPaused = false;
+    private bool isMapOpen = false;
 
     void Update()
     {
@@ -28,6 +31,8 @@ public class PauseMenu : MonoBehaviour
                 Pause();
             }
         }
+
+
     }
     public void Resume()
     {
@@ -76,6 +81,7 @@ public class PauseMenu : MonoBehaviour
             FindObjectOfType<DriveControls>().SetCameraSensitivity((int)Mathf.Round(value * 100));
         }
     }
+
 
     public void Quit()
     {
