@@ -19,6 +19,6 @@ public class AnimalsCollect : MonoBehaviour
  
     private void UpdateHUD()
     {
-        animalsSavedText.text = "Animals saved: " + animalsSavedCount;  
+        animalsSavedText.text = animalsSavedCount.ToString();
     }
 }
