@@ -802,6 +802,7 @@ MonoBehaviour:
   RotationSpeed: 40
   MinCameraAngle: -50
   MaxCameraAngle: 50
+  _isPossibleToLeave: 1
   _motorForce: 4000
   _brakeForce: 1000
   MaxSteeringAngle: 30
@@ -1088,9 +1089,10 @@ GameObject:
   - component: {fileID: 1274973501328796033}
   - component: {fileID: 7618953229425341480}
   - component: {fileID: 459701557417346805}
+  - component: {fileID: 8640303284494714321}
   m_Layer: 0
   m_Name: CarUV
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1165,6 +1167,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &8640303284494714321
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4024588063495302873}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.081722535, y: 0.061398763, z: 0.17524277}
+  m_Center: {x: -0.030786077, y: 0.036089294, z: -0.0626213}
 --- !u!1 &5564651846032609628
 GameObject:
   m_ObjectHideFlags: 0

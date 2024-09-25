@@ -58,6 +58,9 @@ public class PlayerControls : MonoBehaviour
     [Header("Sound")]
     [SerializeField] private AudioClip runSound;
     [SerializeField] private AudioClip walkSound;
+    [SerializeField] private AudioClip burnSound;
+    [SerializeField] private AudioSource _audioSource2;
+
 
     [Space(10)]
     [Header("Debug values")]
@@ -78,6 +81,7 @@ public class PlayerControls : MonoBehaviour
     private Rigidbody _rb;
     private PlayerAnimalInteraction _animalHandler;
     private AudioSource _audioSource;
+
 
     void Start()
     {
@@ -252,6 +256,9 @@ public class PlayerControls : MonoBehaviour
     public void TakeDamage(float d)
     {
         _health -= d;
+        if(!_audioSource2.isPlaying) {
+            _audioSource2.PlayOneShot(burnSound);
+        }
         if(_health <= 0 ) 
         {
             SceneManager.LoadScene(FailScene);
