@@ -44,9 +44,6 @@ public class DriveControls : MonoBehaviour
     private Camera cam;
     private AudioSource _audioSource;
 
-    public GameObject Sign;
-
-    private bool hasInteracted = false;
 
     void Start()
     {
@@ -142,17 +139,5 @@ public class DriveControls : MonoBehaviour
         RotationSpeed = sensitivity;
     }
 
-    void Interactwithcar()
-    {
-
-        if (!hasInteracted)
-        {
-
-            Sign.SetActive(false);
-
-
-            hasInteracted = true;
-        }
-    }
 
 }
