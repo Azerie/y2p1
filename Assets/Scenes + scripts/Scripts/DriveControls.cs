@@ -63,7 +63,7 @@ public class DriveControls : MonoBehaviour
     {
         float torque = Math.Sign(moveInput.y) * _motorForce;
         float breakTorque = 0;
-        if (Math.Abs(moveInput.y) < 0.1f)
+        if (moveInput.y < 0.1f)
         {
             torque = 0;
             breakTorque = _brakeForce;
