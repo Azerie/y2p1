@@ -9,12 +9,39 @@ using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
 {
+    public GameObject HUD;
 
+
+
+    private bool isPaused = false;
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape)) 
+        {
+            if (isPaused)
+            {
+                Resume();
+            }
+            else
+            {
+                Pause();
+            }
+        }
+    }
     public void Resume()
     {
         Time.timeScale = 1;
         GetComponent<Canvas>().enabled = false;
         Cursor.visible = false;
+        HUD.SetActive(true);
+    }
+    public void Pause()
+    {
+        Time.timeScale = 0;
+        GetComponent<Canvas>().enabled = true;
+        Cursor.visible = true;
+        HUD.SetActive(false);
     }
 
     public void Restart()
