@@ -3187,6 +3187,10 @@ PrefabInstance:
       value: Press E to pick up items
       objectReference: {fileID: 0}
     - target: {fileID: 8448495946097156989, guid: 28b284145520afe45a015f32a6af1bde, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8448495946097156989, guid: 28b284145520afe45a015f32a6af1bde, type: 3}
       propertyPath: m_fontAsset
       value: 
       objectReference: {fileID: 11400000, guid: f03b022795e16b0419cc4db2b3628bef, type: 2}

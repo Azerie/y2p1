@@ -4632,6 +4632,14 @@ PrefabInstance:
       propertyPath: remainingTime
       value: 600
       objectReference: {fileID: 0}
+    - target: {fileID: 6859315177915285085, guid: 28b284145520afe45a015f32a6af1bde, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: f03b022795e16b0419cc4db2b3628bef, type: 2}
+    - target: {fileID: 6859315177915285085, guid: 28b284145520afe45a015f32a6af1bde, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -5315403089759912061, guid: f03b022795e16b0419cc4db2b3628bef, type: 2}
     - target: {fileID: 6859315177915285087, guid: 28b284145520afe45a015f32a6af1bde, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 53
